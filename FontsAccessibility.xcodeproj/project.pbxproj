@@ -13,8 +13,6 @@
 		7629B6D91EDDE4A200DFD30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7629B6D71EDDE4A200DFD30D /* Main.storyboard */; };
 		7629B6DB1EDDE4A200DFD30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7629B6DA1EDDE4A200DFD30D /* Assets.xcassets */; };
 		7629B6DE1EDDE4A200DFD30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7629B6DC1EDDE4A200DFD30D /* LaunchScreen.storyboard */; };
-		7629B6E71EDDE76000DFD30D /* UIFont+Accessibilty.m in Sources */ = {isa = PBXBuildFile; fileRef = 7629B6E61EDDE76000DFD30D /* UIFont+Accessibilty.m */; };
-		7629B6EA1EDDE79100DFD30D /* UIControl+FontsAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7629B6E91EDDE79100DFD30D /* UIControl+FontsAccessibility.m */; };
 		7629B6F41EDDF63200DFD30D /* FontsAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7629B6F21EDDF63200DFD30D /* FontsAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7629B6F71EDDF63200DFD30D /* FontsAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7629B6F01EDDF63200DFD30D /* FontsAccessibility.framework */; };
 		7629B6F81EDDF63200DFD30D /* FontsAccessibility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7629B6F01EDDF63200DFD30D /* FontsAccessibility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -262,9 +260,7 @@
 			files = (
 				7629B6D61EDDE4A200DFD30D /* ViewController.m in Sources */,
 				7629B6D31EDDE4A200DFD30D /* AppDelegate.m in Sources */,
-				7629B6EA1EDDE79100DFD30D /* UIControl+FontsAccessibility.m in Sources */,
 				7629B6D01EDDE4A200DFD30D /* main.m in Sources */,
-				7629B6E71EDDE76000DFD30D /* UIFont+Accessibilty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +400,7 @@
 				DEVELOPMENT_TEAM = U6JPKWSC5S;
 				INFOPLIST_FILE = FontsAccessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectivesoft.FontsAccessibility;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectivesoft.FontsAccessibilityExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -416,7 +412,7 @@
 				DEVELOPMENT_TEAM = U6JPKWSC5S;
 				INFOPLIST_FILE = FontsAccessibility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.effectivesoft.FontsAccessibility;
+				PRODUCT_BUNDLE_IDENTIFIER = com.effectivesoft.FontsAccessibilityExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -484,6 +480,7 @@
 				7629B6E41EDDE4A200DFD30D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7629B6F91EDDF63200DFD30D /* Build configuration list for PBXNativeTarget "FontsAccessibility" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +489,7 @@
 				7629B6FB1EDDF63200DFD30D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

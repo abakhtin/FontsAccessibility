@@ -32,11 +32,12 @@
 
 @end
 
-@interface UILabel()
+
+@interface UIView()
 @property(nonatomic, assign) CGFloat initialPointSize;
 @end
 
-@implementation UILabel (FontsAccessibility)
+@implementation UIView(FontsAccessibility)
 
 static void* initialPointSizeKey = &initialPointSizeKey;
 static void* automaticalyAdjustFontsForAccessibilityKey = &automaticalyAdjustFontsForAccessibilityKey;
@@ -54,13 +55,14 @@ static void* automaticalyAdjustFontsForAccessibilityKey = &automaticalyAdjustFon
 }
 
 - (void)setAutomaticalyAdjustFontsForAccessibility:(BOOL)automaticalyAdjustFontsForAccessibility {
-    self.initialPointSize = self.font.pointSize;
+    self.initialPointSize = self.getInitialPointSize;
     objc_setAssociatedObject(self, automaticalyAdjustFontsForAccessibilityKey, @(automaticalyAdjustFontsForAccessibility), OBJC_ASSOCIATION_ASSIGN);
 
     __weak typeof(self) weakSelf = self;
     void(^observerBlock)(NSNotification *note) = ^(NSNotification *note) {
         __strong typeof(self) strongSelf = weakSelf;
-        strongSelf.font = [strongSelf.font fontWithSize:strongSelf.initialPointSize category:UIApplication.sharedApplication.preferredContentSizeCategory];
+        UIFont *font = [strongSelf.currentFont fontWithSize:strongSelf.initialPointSize category:UIApplication.sharedApplication.preferredContentSizeCategory];
+        [self adjustAccessibilityFont:font];
     };
     id observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIContentSizeCategoryDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:observerBlock];
     observerBlock(nil);
@@ -69,6 +71,78 @@ static void* automaticalyAdjustFontsForAccessibilityKey = &automaticalyAdjustFon
         [[NSNotificationCenter defaultCenter] removeObserver:observer];
     }];
     objc_setAssociatedObject(self, (__bridge void *)(@"OnDeallocCallback"), block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)adjustAccessibilityFont:(UIFont *)font {
+    NSAssert(NO, @"Should be overriden in subclass");
+}
+
+- (CGFloat)getInitialPointSize {
+    NSAssert(NO, @"Should be overriden in subclass");
+    return 0.0;
+}
+
+- (UIFont *)currentFont {
+    NSAssert(NO, @"Should be overriden in subclass");
+    return nil;
+}
+
+@end
+
+
+@implementation UILabel (FontsAccessibility)
+
+@dynamic automaticalyAdjustFontsForAccessibility;
+
+
+- (void)adjustAccessibilityFont:(UIFont *)font {
+    self.font = font;
+}
+
+- (CGFloat)getInitialPointSize {
+    return self.font.pointSize;
+}
+
+- (UIFont *)currentFont {
+    return self.font;
+}
+
+@end
+
+
+@implementation UIButton (FontsAccessibility)
+
+@dynamic automaticalyAdjustFontsForAccessibility;
+
+- (void)adjustAccessibilityFont:(UIFont *)font {
+    self.titleLabel.font = font;
+}
+
+- (CGFloat)getInitialPointSize {
+    return self.titleLabel.font.pointSize;
+}
+
+- (UIFont *)currentFont {
+    return self.titleLabel.font;
+}
+
+@end
+
+
+@implementation UITextField (FontsAccessibility)
+
+@dynamic automaticalyAdjustFontsForAccessibility;
+
+- (void)adjustAccessibilityFont:(UIFont *)font {
+    self.font = font;
+}
+
+- (CGFloat)getInitialPointSize {
+    return self.font.pointSize;
+}
+
+- (UIFont *)currentFont {
+    return self.font;
 }
 
 @end

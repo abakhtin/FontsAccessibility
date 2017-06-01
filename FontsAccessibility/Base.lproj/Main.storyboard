@@ -30,11 +30,34 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="automaticalyAdjustFontsForAccessibility" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3m-JF-NRC">
+                                <rect key="frame" x="164" y="358" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticalyAdjustFontsForAccessibility" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-gw-wqK">
+                                <rect key="frame" x="112.5" y="396" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9bh-s1-aDV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="automaticalyAdjustFontsForAccessibility" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="V3m-JF-NRC" firstAttribute="centerX" secondItem="EFr-G0-b14" secondAttribute="centerX" id="LZR-p5-E5A"/>
                             <constraint firstItem="EFr-G0-b14" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TvI-Ry-txB"/>
                             <constraint firstItem="EFr-G0-b14" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bql-YB-WbN"/>
+                            <constraint firstItem="Tec-gw-wqK" firstAttribute="top" secondItem="V3m-JF-NRC" secondAttribute="bottom" constant="8" id="cH6-nm-HVb"/>
+                            <constraint firstItem="V3m-JF-NRC" firstAttribute="top" secondItem="EFr-G0-b14" secondAttribute="bottom" constant="14" id="kQz-M2-cTm"/>
+                            <constraint firstItem="Tec-gw-wqK" firstAttribute="centerX" secondItem="V3m-JF-NRC" secondAttribute="centerX" id="vPe-Zc-azI"/>
                         </constraints>
                     </view>
                 </viewController>
