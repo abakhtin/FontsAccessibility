@@ -6,7 +6,8 @@
 //  Copyright © 2017 EffectiveSoft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIControl+FontsAccessibility.h"
+#import "UIFont+Accessibilty.h"
 
 //! Project version number for FontsAccessibility.
 FOUNDATION_EXPORT double FontsAccessibilityVersionNumber;
